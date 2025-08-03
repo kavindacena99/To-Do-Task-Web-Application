@@ -1,6 +1,10 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
 const taskRoutes = require('./routes/taskRoutes');
+const dotenv = require('dotenv');
+const cors = require('cors');
+
+dotenv.config();
 
 const app = express();
 
@@ -11,6 +15,7 @@ const db = mysql.createPool({
     database: 'todo_app'
 });
 
+app.use(cors());
 app.use(express.json());
 
 app.use((req,res,next) => {

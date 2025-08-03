@@ -5,7 +5,6 @@ const router = express.Router();
 router.get("/",async (req,res) => {
     try {
         const [rows] = await req.db.query("SELECT * FROM tasks");
-        console.log('Fetched todos:', rows);
         res.json(rows);
     } catch (error) {
         console.error('Error fetching todos:', error);
@@ -20,7 +19,7 @@ router.post("/",async (req,res) => {
     }
 
     try {
-        const [result] = await req.db.query("INSERT INTO tasks (name, description) VALUES (?, ?)", [title, description]);
+        const [result] = await req.db.query("INSERT INTO tasks (title, description) VALUES (?, ?)", [title, description]);
         res.status(201).json({ id: result.insertId, title, description });
     } catch (error) {
         console.error('Error creating todo:', error);

@@ -4,13 +4,13 @@ import TaskList from '../components/TaskList';
 
 function Home(){
     return(
-        <div class="container-fluid">
-            <div class="row vh-100">
-                <div class="col-md-6">
+        <div className="container-fluid">
+            <div className="row vh-100">
+                <div className="col-md-6">
                     <AddTask />
                 </div>
 
-                <div class="col-md-5">
+                <div className="col-md-5">
                     <TaskList />
                 </div>
             </div>
