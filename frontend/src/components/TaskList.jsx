@@ -18,9 +18,14 @@ function TaskList(){
     }
     , []);
 
+    const handleDelete = async (id) => {
+        const response = await API.delete(`/tasks/${id}`);
+        setTasks(tasks.filter(task => task.tid !== id));
+    }
+
     return(
         <div>
-            {tasks.map((task)=>(<TaskCard key={task.tid} name={task.title} description={task.description} />))}
+            {tasks.map((task)=>(<TaskCard key={task.tid} id={task.tid} name={task.title} description={task.description} onDelete={handleDelete} />))}
         </div>
     );
 }
