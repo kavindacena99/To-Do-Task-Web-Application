@@ -120,12 +120,4 @@ docker compose down -v
 
 ## 👨‍💻 Author
 
-Kavinda Supun
-
-```
-
----
-
-⚡ Question:  
-Do you want me to extend this README so it also includes **how to seed your MySQL database with tables automatically** (so you don’t need to manually create them)?
-```
+Kavinda Supun Dissanayake
