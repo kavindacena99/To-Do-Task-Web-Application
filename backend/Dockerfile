@@ -1,11 +1,14 @@
-FROM node:18
+# dockerfile for the server
+FROM node:21-alpine 
+
+RUN npm install -g nodemon
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
-
 COPY . .
 
-EXPOSE 5000
-CMD ["npm", "start"]
+RUN npm install
+
+EXPOSE 8000
+
+CMD ["npm","run","start"]
