@@ -55,7 +55,7 @@ In the root directory, run:
 docker compose up --build
 ```
 
-* **Frontend**: [http://localhost:3000](http://localhost:3000)
+* **Frontend**: [http://localhost:5173](http://localhost:5173)
 * **Backend API**: [http://localhost:5000](http://localhost:5000)
 * **MySQL Database**:
 
