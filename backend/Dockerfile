@@ -1,14 +1,13 @@
-# dockerfile for the server
-FROM node:21-alpine 
-
-RUN npm install -g nodemon
+# backend/Dockerfile
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY . .
-
+COPY package*.json ./
 RUN npm install
 
-EXPOSE 8000
+COPY . .
 
-CMD ["npm","run","start"]
+EXPOSE 5000
+
+CMD ["node", "server.js"]
